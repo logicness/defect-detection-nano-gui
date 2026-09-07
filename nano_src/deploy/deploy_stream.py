@@ -51,7 +51,7 @@ def main():
     # 6) 流协议自检（本地 TCP 连板端）
     d.banner("流协议自检")
     import socket, struct, json
-    sock = socket.create_connection(("192.168.1.101", 8888), timeout=10)
+    sock = socket.create_connection(("<NANO_LAN_IP>", 8888), timeout=10)
     def send(obj):
         data = json.dumps(obj, ensure_ascii=False).encode("utf-8")
         sock.sendall(struct.pack(">I", len(data)) + data)

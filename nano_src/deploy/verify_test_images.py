@@ -8,7 +8,7 @@ import sys
 sys.path.insert(0, r"C:\Users\机械革命\Desktop\基于深度学习的缺陷检测边缘设备开发\nano_src\deploy")
 import deploy_to_nano as d
 
-HOST, PORT = "192.168.1.101", 8888
+HOST, PORT = "<NANO_LAN_IP>", 8888
 
 
 def send(sock, obj):

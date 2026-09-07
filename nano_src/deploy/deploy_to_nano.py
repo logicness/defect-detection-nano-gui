@@ -13,7 +13,7 @@ import paramiko
 
 # 连接参数：通过环境变量 NANO_USER / NANO_PASS / NANO_SUDO 传入，禁止硬编码密码。
 # 可用环境变量 NANO_HOST/USER/PASS/SUDO 覆盖（与 deploy_camera.py 保持一致）。
-HOST = os.environ.get("NANO_HOST", "192.168.1.101")
+HOST = os.environ.get("NANO_HOST", "<NANO_LAN_IP>")
 USER = os.environ.get("NANO_USER", "nvidia")
 PASS = os.environ.get("NANO_PASS", "")
 SUDO = os.environ.get("NANO_SUDO", "")

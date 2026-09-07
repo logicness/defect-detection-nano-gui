@@ -1263,7 +1263,7 @@ class MainWindow(QMainWindow):
         """手动重新连接Nano推理服务（断开旧线程后立即重连）"""
         self.controller.tcp.disconnect()
         t = self.cfg.get("tcp", {})
-        host = t.get("host", "192.168.1.101")
+        host = t.get("host", "<NANO_LAN_IP>")
         port = t.get("port", 8888)
         self.controller.configure_tcp(
             host, port,

@@ -24,3 +24,12 @@ python nano_src/deploy/deploy_to_nano.py
 
 ## 许可
 MIT
+
+## 网络占位符说明
+- `<LAN_IP>`：其它局域网地址占位符。
+部署前请按你的实际网络环境替换为真实 IP。
+
+## 网络占位符说明
+- `<NANO_LAN_IP>`：下位机（Jetson Orin Nano）的局域网 IP 占位符，部署前请替换为真实 IP。
+- `<PLC_LAN_IP>`：PLC 的局域网 IP 占位符，部署前请替换为真实 IP。
+- `<LAN_IP>`：其它局域网地址占位符。
