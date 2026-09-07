@@ -1,0 +1,29 @@
+# 产线发布白名单（第一批 20 类，2026-09-05 依训练#1报告定稿）
+# 含义：模型含 39 类容量，但产线只启用这 20 类（其余类不输出，防误检/防弱类噪音）
+# 依据：缺陷类别宪章表_v1.0.md（第一批，GC10 增补后精算 20 类，≥277 框）
+# 注意：id 与 univ39_v8m.names 一一对应（0-38）；board 端按 id 过滤
+
+whitelist:
+  0: Bright scratch
+  1: Crazing
+  3: Crescent gap
+  4: Dark scratches
+  5: Finishing roll printing
+  6: Inclusion
+  8: Iron sheet ash
+  9: Oil spot
+  12: Patches
+  13: Pitted surface
+  14: Punching
+  15: Red iron sheet
+  16: Rolled in scale
+  18: Secondary rust skin
+  19: Silk spot
+  20: Slag inclusion
+  21: Waist folding
+  22: Water spot
+  23: Welding line
+  24: White rust
+
+# 未启用（暂缓）：2 Crease、7 Iron scale compression、10/11 已并 oxide_scale、
+# 17 Rolled pit、25-34 MVIT 10 类（补强达标后按批启用）、35-38 SD10 4 类（许可证待处理）

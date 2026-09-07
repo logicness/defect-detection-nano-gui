@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.imgstore_test/
+.imgstore_proto/
+.stream_imgs/
+.diag_imgs/
+test_images_staging/
+*.log
+
+*.tmpdir/
