@@ -45,19 +45,19 @@ python nano_gui_app/app/main.py
 │   ├── inference/
 │   │   ├── trt_infer.py       # TensorRT engine loader, letterbox, NMS, coordinate restore
 │   │   └── camera_test.py     # Camera capture utility for testing
-│   ├── server/
-│   │   ├── infer_server.py    # TCP inference server (asyncio, port 8888)
-│   │   ├── camera_source.py   # Camera abstraction (MVS SDK / simulation)
-│   │   ├── model_manager.py   # Model loading, switching, and engine management
-│   │   ├── image_store.py     # Image storage and retrieval
-│   │   └── nano_local_detect.py  # Local detection pipeline
-│   └── deploy/                # Deployment and provisioning scripts
-│       ├── deploy_to_nano.py  # Push code/models to device via SSH/SCP
-│       ├── deploy_camera.py   # Camera SDK installation and configuration
-│       └── deploy_stream.py   # Stream testing utility
+│   └── server/
+│       ├── infer_server.py    # TCP inference server (asyncio, port 8888)
+│       ├── camera_source.py   # Camera abstraction (MVS SDK / simulation)
+│       ├── camera_sim.py      # Simulated camera source for testing
+│       ├── model_manager.py   # Model loading, switching, and engine management
+│       ├── image_store.py     # Image storage and retrieval
+│       ├── log_config.py      # Logging configuration
+│       └── nano_local_detect.py  # Local detection pipeline
 ├── LICENSE                    # MIT License
 └── README.md
 ```
+
+> **Not included:** Deployment and provisioning scripts (device setup, camera SDK installation, test image collection) are available in the private companion repository. See the [Configuration](#configuration) section for deployment parameters.
 
 ## Configuration
 
@@ -65,18 +65,9 @@ The inference server and GUI read configuration at runtime. Key parameters:
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `host` | `<NANO_LAN_IP>` | Device LAN IP address |
+| `host` | `[NANO_LAN_IP]` | Device LAN IP address |
 | `port` | `8888` | TCP inference server port |
 | `model` | `models/active` | Path to TensorRT engine file |
-
-Deployment scripts accept configuration via environment variables:
-
-```bash
-export NANO_HOST="192.168.1.101"   # Device IP
-export NANO_USER="nvidia"          # SSH username (Jetson default)
-export NANO_PASS="your-password"   # SSH password
-python nano_src/deploy/deploy_to_nano.py
-```
 
 ## Network Notes
 
